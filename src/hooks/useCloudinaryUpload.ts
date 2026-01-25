@@ -16,7 +16,7 @@ export const useCloudinaryUpload = () => {
     formData.append('file', file);
     formData.append(
       'upload_preset',
-      process.env.NEXT_PUBLIC_CLOUDINARY_PRESET || 'ticketflow_preset',
+      process.env.NEXT_PUBLIC_CLOUDINARY_PRESET || 'testing',
     );
 
     try {
