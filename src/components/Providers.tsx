@@ -24,9 +24,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <SessionProvider>
       <QueryClientProvider client={queryClient}>
         {children}
-        {/* Toast notifications handler */}
         <Toaster position="bottom-right" reverseOrder={false} />
-        {/* DevTools: Only shows in development mode */}
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </SessionProvider>
