@@ -1,4 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
 @import 'tailwindcss';
+
+:root {
+  --accent: #c6f135;
+  --accent-dim: #9cbf1a;
+  --surface: #111118;
+  --surface-2: #18181f;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #f0f0f5;
+  --muted: #72727a;
+}
+
+/* Fonts */
+.font-display {
+  font-family: 'Bebas Neue', sans-serif;
+}
+.font-body {
+  font-family: 'DM Sans', sans-serif;
+}
+.font-mono {
+  font-family: 'DM Mono', monospace;
+}
+
+/* Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 32px 0 rgba(198, 241, 53, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 56px 8px rgba(198, 241, 53, 0.3);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes drawer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation utilities */
+.animate-fade-up {
+  animation: fade-up 0.7s ease both;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.glow-btn {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Ticker */
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: ticker 28s linear infinite;
+}
+
+/* Noise background */
+.noise-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Card hover */
+.card-hover {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(198, 241, 53, 0.3);
+  box-shadow: 0 24px 48px -12px rgba(198, 241, 53, 0.08);
+}
+
+/* Nav links */
+.nav-link {
+  position: relative;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+.nav-link:hover {
+  color: var(--accent);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Mobile nav */
+.nav-link-mobile {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  transition: color 0.2s;
+  cursor: pointer;
+  line-height: 1;
+}
+.nav-link-mobile:hover {
+  color: var(--accent);
+}
+
+.mobile-drawer {
+  animation: drawer-in 0.25s ease both;
+}
+
+/* Footer */
+.footer-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.footer-link:hover {
+  color: var(--accent);
+}
+
+/* Buttons */
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btn-outline:hover {
+  border-color: rgba(198, 241, 53, 0.4);
+  color: var(--accent);
+}
+
+/* @import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -105,4 +297,4 @@
   body {
     @apply text-slate-900 antialiased;
   }
-}
+} */
