@@ -124,7 +124,7 @@ export const KanbanTicket = ({ ticket, index }: KanbanTicketProps) => {
                 style={{ color: 'var(--muted)' }}
               />
               <span
-                className="font-body text-xs font-medium truncate max-w-[5rem]"
+                className="font-body text-xs font-medium truncate max-w-20"
                 style={{ color: 'var(--muted)' }}
               >
                 {ticket.assignee_name?.split(' ')[0] || 'Unassigned'}
