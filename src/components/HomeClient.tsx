@@ -146,9 +146,8 @@ export function Hero() {
           className="animate-fade-up delay-200 max-w-xl mx-auto text-base leading-relaxed mb-10"
           style={{ color: 'var(--muted)' }}
         >
-          Ditch clunky enterprise software. Manage internal tickets, track SLAs,
-          and resolve engineering blockers with a UI your team will actually
-          enjoy.
+          Manage internal tickets, track SLAs, and resolve blockers with a UI
+          your team will actually enjoy.
         </p>
 
         <div className="animate-fade-up delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -534,8 +533,8 @@ export function FeaturesSection() {
             className="max-w-xs text-sm leading-relaxed"
             style={{ color: 'var(--muted)' }}
           >
-            Designed from the ground up for engineering teams who move fast and
-            hate context switching.
+            Designed from the ground up for teams who move fast and hate context
+            switching.
           </p>
         </div>
 
